@@ -54,6 +54,7 @@ atcoderッッッッッッ始まるよ！！！
             print(contest_name)
 
 
+print("start")
 while True:
     now = datetime.now().replace(hour=22, minute=0, second=0)
     now += timedelta(hours=random.randint(0, 1), minutes=random.randint(0, 59), seconds=random.randint(0, 59))
