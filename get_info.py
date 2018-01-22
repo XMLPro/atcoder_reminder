@@ -41,7 +41,7 @@ atcoderッッッッッッ始まるよ！！！
 {}
 """.format(schedule, contest_name, link)
 
-        response = requests.post("http://localhost:8080/schedule", data={
+        response = requests.post("http://0.0.0.0:8000/schedule", data={
             "schedule": schedule,
             "date_format": date_format,
             "message": contest_name,
