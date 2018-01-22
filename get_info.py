@@ -23,14 +23,16 @@ tbody = target.select("tbody")[0]
 trs = tbody.select("tr")
 for tr in trs:
     a = tr.select("td")[0].select("a")[0]
-    date = datetime.strptime(a.text, date_format)
+    schedule = a.text
 
     a = tr.select("td")[1].select("a")[0]
     contest_name = a.text
     link = a.get("href")
 
-    print(date)
-    print(contest_name)
-    print(link)
-
-    print("====")
+    response = requests.post("http://localhost:8080/schedule", data={
+        "schedule": schedule,
+        "date_format": date_format,
+        "message": contest_name,
+        })
+    if response.text == "1":
+        print("saved")
