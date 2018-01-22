@@ -55,8 +55,11 @@ atcoderッッッッッッ始まるよ！！！
 
 
 print("start")
+now = datetime.now().replace(hour=22, minute=0, second=0)
 while True:
-    now = datetime.now().replace(hour=22, minute=0, second=0)
     now += timedelta(hours=random.randint(0, 1), minutes=random.randint(0, 59), seconds=random.randint(0, 59))
-    search(debug=False)
+    if now < datetime.now():
+        search(debug=False)
+        now += timedelta(days=1)
+        now = now.replace(hour=22, minute=0, second=0)
     time.sleep(60 * 5)
